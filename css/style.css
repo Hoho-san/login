@@ -30,6 +30,8 @@ body {
     background-color: var(--bg);
 }
 
+/* main content */
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -50,7 +52,6 @@ h1 {
 .item3 {
     grid-area: footer;
     height: 8vh;
-    /* color: #ffffff; */
 }
 
 .grid-container {
@@ -107,7 +108,6 @@ img {
 }
 
 .flip-card {
-    /* background-color: transparent; */
     width: 500px;
     height: 500px;
     perspective: 1000px;
@@ -145,11 +145,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: transparent;
-    /* padding: 0 5rem 0 5rem; */
     mix-blend-mode: darken;
-    /* position: relative; */
     color: white;
     display: flex;
     align-items: center;
