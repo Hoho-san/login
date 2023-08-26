@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        />
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="item1"><h1>Hello World</h1></div>
+            <div class="item2">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img
+                                src="img_avatar.png"
+                                alt="Avatar"
+                                style="width: 300px; height: 300px"
+                            />
+                        </div>
+                        <form action="" method="post" class="flip-card-back">
+                            <div class="container">
+                                <h1>Login</h1>
+                            </div>
+                            <div class="container">
+                                <label for="uname"><b>Username</b></label>
+                                <input
+                                    type="text"
+                                    placeholder="Enter Username"
+                                    name="uname"
+                                    required
+                                />
+
+                                <label for="psw"><b>Password</b></label>
+                                <input
+                                    type="password"
+                                    placeholder="Enter Password"
+                                    name="psw"
+                                    required
+                                />
+                                <label for="age"
+                                    >Select Age: <span id="demo"></span
+                                ></label>
+                                <div class="slidecontainer">
+                                    <input
+                                        type="range"
+                                        min="1"
+                                        max="100"
+                                        value="1"
+                                        class="slider"
+                                        id="myRange"
+                                    />
+                                </div>
+
+                                <div class="button">
+                                    <button type="submit">Login</button>
+                                </div>
+
+                                <!-- <input type="checkbox" id="switch" />
+                                <label for="switch">remember me</label> -->
+                            </div>
+
+                            <div class="forgot">
+                                <span class="psw"
+                                    >Forgot <a href="#">password?</a></span
+                                >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item3">
+                <div class="ocean">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function () {
+                output.innerHTML = this.value;
+            };
+        </script>
+    </body>
+</html>

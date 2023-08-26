@@ -1,0 +1,291 @@
+:root {
+    --main-color: #256d8f;
+    --bg: #ffffff;
+    --border: 0.2rem solid rgba(0, 0, 0, 0.979);
+}
+* {
+    font-family: "Segoe UI";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+    /* red border guide */
+    /* border: 1px solid rgba(255, 0, 0); */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.item1 {
+    grid-area: header;
+    height: 8vh;
+    background-color: rgb(27, 117, 190);
+    color: #ffffff;
+}
+
+.item2 {
+    grid-area: main;
+    height: 84vh;
+}
+
+.item3 {
+    grid-area: footer;
+    height: 8vh;
+    color: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header "
+        "main"
+        "footer";
+    height: 100vh;
+    background: rgb(242, 242, 242);
+}
+
+.item2-1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.item2-2 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.item2-3 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.grid-container > div {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3rem;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 0 2rem 0rem 2rem;
+    gap: 1rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04aa6d;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: start;
+}
+input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: start;
+    width: 100%;
+    transition: 0.2s linear;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 0.1rem solid rgb(255, 255, 255);
+    margin: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--main-color);
+    padding: 0 2rem 0 2rem;
+}
+button:hover {
+    box-shadow: 0 0 0 4px rgb(255, 255, 255), 0 0 0 7px var(--main-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.forgot {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    position: relative;
+    cursor: wait;
+    padding: 20px 2rem 0 2rem;
+}
+.forgot::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 30px;
+    background-color: rgba(228, 0, 0, 0.37);
+    left: 0;
+    bottom: 0;
+    border-radius: 0.5rem;
+    transition: width 0.3s;
+}
+.forgot:hover::after {
+    width: 100%;
+}
+
+/* waves */
+.ocean {
+    height: 80px; /* change the height of the waves here */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+}
+
+.wave {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='%23003F7C'/%3E%3C/svg%3E");
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(2) {
+    bottom: 0;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.5;
+}
+
+.wave:nth-of-type(3) {
+    bottom: 0;
+    animation: wave 20s -1s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
